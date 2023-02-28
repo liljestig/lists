@@ -2,9 +2,9 @@
 function NavBar(props) {
     const list = props.menuitems;
     // each item should have a unique key
-    const updatedList = list.map(listitems => {
-        return <li>{listitems}</li>;
-    })
+    const updatedList = list.map((listItems, index) => {
+        return <li key={index}>{listItems}</li>;
+    });
     // note that React needs to have a single Parent
     return <ul>{updatedList}</ul>;
 }
