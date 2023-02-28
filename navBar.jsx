@@ -3,9 +3,11 @@ function NavBar(props) {
     const list = props.menuitems;
     const {Button} = ReactBootstrap;
     // each item should have a unique key
+    const handleClick = e => {
+        alert(`you clicked ${e.target.innerHTML}`);
+    };
     const updatedList = list.map((listItems, index) => {
-        //return <li key={index}>{listItems}</li>;
-        return <Button key={index}>{listItems}</Button>;
+        return <Button onClick={handleClick} key={index}>{listItems}</Button>;
     });
     // note that React needs to have a single Parent
     return <ul>{updatedList}</ul>;
